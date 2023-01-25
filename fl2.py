@@ -89,4 +89,4 @@ def sql_1(lon, lat, radius, cursor):
 
 cur = db_connect()
 
-print(sql_1(lon(),lat(),100,cur)[0])
+print(sql_1(lon(),lat(),1000,cur)[0])
