@@ -68,7 +68,7 @@ def get_zip_code():
 
 def create_csv():
     # open a new csv file in write mode
-    with open('large_file.csv', 'w', newline='') as csvfile:
+    with open('input.csv', 'w', newline='') as csvfile:
         # create a csv writer object
         csv_writer = csv.writer(csvfile)
 
