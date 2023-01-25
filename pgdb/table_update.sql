@@ -1,0 +1,1 @@
+UPDATE test_table SET geom = ST_SETSRID(ST_MakePoint(lon, lat),4326); 

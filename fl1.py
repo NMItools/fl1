@@ -33,7 +33,7 @@ def specs():
     print("----------")
     print("OS       :" + str(platform.system())+ " " + str(platform.version()))
     print("CPU      :" + cpuinfo.get_cpu_info()['brand_raw'] + " - " + str(multiprocessing.cpu_count()) + " core(s)")
-    # print("CPU      :" + str(platform.processor()))
+    print("CPU      :" + str(platform.processor()))
     print("RAM (GB) :" + str(round(psutil.virtual_memory().total / (1024.0 ** 3),0)))
 
 def timestamp():
@@ -86,9 +86,9 @@ us_zip_codes = get_us_zip_codes()
 # define the number of rows
 num_rows = 1000000
 
-# t1, tp1 = timestamp()[0], timestamp()[1]
-# print(f"{Fore.GREEN}Creation of CSV file with {num_rows} rows started at {tp1}")
-# create_csv()
-# t2, tp2 = timestamp()[0], timestamp()[1]
-# print(f"{Fore.GREEN}CSV file created for {round((t2 - t1).total_seconds(),1)} sec. at {tp2}")
+t1, tp1 = timestamp()[0], timestamp()[1]
+print(f"{Fore.GREEN}Creation of CSV file with {num_rows} rows started at {tp1}")
+create_csv()
+t2, tp2 = timestamp()[0], timestamp()[1]
+print(f"{Fore.GREEN}CSV file created for {round((t2 - t1).total_seconds(),1)} sec. at {tp2}")
 print(specs())

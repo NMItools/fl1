@@ -1,0 +1,5 @@
+curl http://ipinfo.io/ip
+ip address
+
+Switch to the root user.
+sudo su -
