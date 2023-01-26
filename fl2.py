@@ -42,8 +42,9 @@ import cpuinfo
 
 # database connection parameters
 
-server = 'localhost'
-db_port = 5432
+# server = 'localhost'
+server = '192.168.11.12'
+db_port = 5435
 database = 'test_db'
 db_user = 'postgres'
 password = 'softdesk'
