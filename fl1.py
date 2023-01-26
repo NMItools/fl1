@@ -19,22 +19,10 @@ import csv
 import uuid
 import random
 from datetime import datetime
-
-import platform
-import multiprocessing
-import psutil
-
-import cpuinfo
-
 from colorama import init
 from colorama import Fore, Back
 
-def specs():
-    print("----------")
-    print("OS       :" + str(platform.system())+ " " + str(platform.version()))
-    print("CPU      :" + cpuinfo.get_cpu_info()['brand_raw'] + " - " + str(multiprocessing.cpu_count()) + " core(s)")
-    print("CPU      :" + str(platform.processor()))
-    print("RAM (GB) :" + str(round(psutil.virtual_memory().total / (1024.0 ** 3),0)))
+
 
 def timestamp():
     time = datetime.now()
@@ -91,4 +79,3 @@ print(f"{Fore.GREEN}Creation of CSV file with {num_rows} rows started at {tp1}")
 create_csv()
 t2, tp2 = timestamp()[0], timestamp()[1]
 print(f"{Fore.GREEN}CSV file created for {round((t2 - t1).total_seconds(),1)} sec. at {tp2}")
-print(specs())

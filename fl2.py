@@ -33,16 +33,28 @@ import psycopg2
 from datetime import datetime
 import csv
 from colorama import Fore
+import platform
+import multiprocessing
+import psutil
+
+import cpuinfo
 
 
 # database connection parameters
 
-server = '192.168.11.12'
-db_port = 5435
+server = 'localhost'
+db_port = 5432
 database = 'test_db'
 db_user = 'postgres'
 password = 'softdesk'
 table_name = ''
+
+def specs():
+    print("----------")
+    print("OS       :" + str(platform.system())+ " " + str(platform.version()))
+    print("CPU      :" + cpuinfo.get_cpu_info()['brand_raw'] + " - " + str(multiprocessing.cpu_count()) + " core(s)")
+    print("CPU      :" + str(platform.processor()))
+    print("RAM (GB) :" + str(round(psutil.virtual_memory().total / (1024.0 ** 3),0)))
 
 def timestamp():
     time = datetime.now()
@@ -144,3 +156,4 @@ with open('report.csv', 'w', newline='') as csvfile:
     print(f"{Fore.WHITE}CSV report file created.")
 
 cur.close()
+print(specs())
